@@ -1,0 +1,38 @@
+﻿@model Practica02.Models.Cliente
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Nuevo cliente</h2>
+@using (Html.BeginForm())
+{@Html.HiddenFor(model => Model.IdCliente)
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.IdCliente)
+        @Html.EditorFor(model => Model.IdCliente)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.NroDocumento)
+        @Html.EditorFor(model => Model.NroDocumento)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Direccion)
+        @Html.EditorFor(model => Model.Direccion)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Telefono)
+        @Html.EditorFor(model => Model.Telefono)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Nombre)
+        @Html.EditorFor(model => Model.Nombre)
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Registrar" class="btn btn-primary" />
+    </div>
+}

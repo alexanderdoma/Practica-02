@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Practica02.Models.Cliente>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de clientes</h2>
+@Html.ActionLink("Nuevo cliente", "crear", "Cliente", new { @class = "btn btn-primary"})
+
+<table class="table table-hover">
+    <thead>
+        <th>N° Docuemento</th>
+        <th>Nombres</th>
+        <th>Dirección</th>
+        <th>Telefono</th>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+        <tr>
+            <td>@Html.ActionLink(item.NroDocumento, "Editar", new { id = item.IdCliente})</td>
+            <td>@item.Nombre</td>
+            <td>@item.Direccion</td>
+            <td>@item.Telefono</td>
+        </tr>
+            }
+    </tbody>
+</table>
+
